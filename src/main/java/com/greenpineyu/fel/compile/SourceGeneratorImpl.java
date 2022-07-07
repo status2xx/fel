@@ -1,15 +1,5 @@
 package com.greenpineyu.fel.compile;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
 import com.greenpineyu.fel.Expression;
 import com.greenpineyu.fel.FelEngine;
 import com.greenpineyu.fel.FelEngineImpl;
@@ -24,6 +14,12 @@ import com.greenpineyu.fel.parser.AbstFelNode;
 import com.greenpineyu.fel.parser.ConstNode;
 import com.greenpineyu.fel.parser.FelNode;
 import com.greenpineyu.fel.parser.VarAstNode;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.util.*;
 
 public class SourceGeneratorImpl implements SourceGenerator {
 
@@ -52,7 +48,7 @@ public class SourceGeneratorImpl implements SourceGenerator {
 
 		StringBuilder sb = new StringBuilder();
 		InputStream in = SourceGeneratorImpl.class
-				.getResourceAsStream("java.template");
+				.getResourceAsStream("/java.template");
 		BufferedReader reader = new BufferedReader(new InputStreamReader(in));
 		String line = null;
 		try {
